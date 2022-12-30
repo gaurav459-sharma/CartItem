@@ -13,7 +13,30 @@ class CartItems extends React.Component{
     }
     //if we not use the arrow function then we have to bind the function 
     increaseQuantity=()=>{
-        console.log("this ", this.state);
+        // console.log("this ", this.state);
+
+        // set state form-1
+        //used when we have no need of previous state
+        // this.setState({
+        //     Qty:this.state.Qty+1
+        // });
+
+        //set state form-2
+        //mainly use when we have a requirements of previous state
+        this.setState((prevState)=>{
+          return{
+            Qty:prevState.Qty+1
+          }
+        
+
+        });
+    }
+    decreaseQuantity=()=>{
+       this.setState((prevState)=>{
+        return {
+            Qty:prevState.Qty-1
+        }
+       })
     }
 
     render(){
@@ -41,6 +64,7 @@ class CartItems extends React.Component{
                            alt="decrease" 
                            className="action-icons" 
                            src="https://cdn-icons-png.flaticon.com/512/992/992683.png" 
+                           onClick={this.decreaseQuantity}
                            />
                            <img 
                            alt="delete" 

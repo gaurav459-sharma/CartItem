@@ -13,8 +13,11 @@ class CartItems extends React.Component{
                      <div style={{fontSize:25}}>phone</div>
                      <div style={{color:'#777'}}>Rs 999</div>
                      <div style={{color:'#777'}}>Qty: 1</div>
-                     <div className="cart-item-actions">  {/*for button */}
 
+                     <div className="cart-item-actions">  {/*for button */}
+                           <img alt="increase" className="action-icons" src="https://cdn-icons-png.flaticon.com/512/992/992651.png" />
+                           <img alt="decrease" className="action-icons" src="https://cdn-icons-png.flaticon.com/512/992/992683.png" />
+                           <img alt="delete" className="action-icons" src="https://cdn-icons-png.flaticon.com/128/1214/1214428.png" />
                      </div>
                  </div>
             </div> 

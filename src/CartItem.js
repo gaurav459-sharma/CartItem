@@ -2,15 +2,6 @@ import React from "react";
 
 class CartItems extends React.Component{
 
-    constructor(){
-        super();
-        this.state={
-            price:999,
-            title:'mobile phone',
-            Qty: 1,
-            img: ''
-        }
-    }
     //if we not use the arrow function then we have to bind the function 
     increaseQuantity=()=>{
         // console.log("this ", this.state);
@@ -42,9 +33,11 @@ class CartItems extends React.Component{
     }
 
     render(){
-        const {price,title,Qty}=this.state;
+         
+        const {price,title,Qty}=this.props.product;
         return(
             <div className="cart-item">   {/*used for cart products*/}
+            
                  <div className="left-block">  {/*image of items*/}
                     <img style={styles.image} />
  

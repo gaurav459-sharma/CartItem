@@ -1,6 +1,6 @@
 import React from "react";
 
-class CartItems extends React.Component{
+const CartItems=(props)=>{
 
     // //if we not use the arrow function then we have to bind the function 
     // increaseQuantity=()=>{
@@ -31,16 +31,13 @@ class CartItems extends React.Component{
     //     }
     //    })
     // }
-
-    render(){
          
-        const {price,title,Qty}=this.props.product;
+        const {price,title,Qty}=props.product;
         const { 
              product,
              increaseQuantity,
              decreaseQuantity,
-             deleteButton}
-             =this.props;
+             deleteButton}=props;
         return(
             <div className="cart-item">   {/*used for cart products*/}
             
@@ -78,7 +75,7 @@ class CartItems extends React.Component{
             </div> 
         );
     }
-}
+
 const styles={
     image:{
         height:110,

@@ -2,35 +2,35 @@ import React from "react";
 
 class CartItems extends React.Component{
 
-    //if we not use the arrow function then we have to bind the function 
-    increaseQuantity=()=>{
-        // console.log("this ", this.state);
+    // //if we not use the arrow function then we have to bind the function 
+    // increaseQuantity=()=>{
+    //     // console.log("this ", this.state);
 
-        // set state form-1
-        //used when we have no need of previous state
-        // this.setState({
-        //     Qty:this.state.Qty+1
-        // });
+    //     // set state form-1
+    //     //used when we have no need of previous state
+    //     // this.setState({
+    //     //     Qty:this.state.Qty+1
+    //     // });
 
-        //set state form-2
-        //mainly use when we have a requirements of previous state
-        this.setState((prevState)=>{
-          return{
-            Qty:prevState.Qty+1
-          }
+    //     //set state form-2
+    //     //mainly use when we have a requirements of previous state
+    //     this.setState((prevState)=>{
+    //       return{
+    //         Qty:prevState.Qty+1
+    //       }
         
 
-        });
-    }
-    decreaseQuantity=()=>{
-        const t=this.state.Qty;
-        if(t===0)return;
-       this.setState((prevState)=>{
-        return {
-            Qty:prevState.Qty-1
-        }
-       })
-    }
+    //     });
+    // }
+    // decreaseQuantity=()=>{
+    //     const t=this.state.Qty;
+    //     if(t===0)return;
+    //    this.setState((prevState)=>{
+    //     return {
+    //         Qty:prevState.Qty-1
+    //     }
+    //    })
+    // }
 
     render(){
          
@@ -53,7 +53,7 @@ class CartItems extends React.Component{
                            alt="increase" 
                            className="action-icons" 
                            src="https://cdn-icons-png.flaticon.com/512/992/992651.png"
-                            onClick={this.increaseQuantity}
+                            onClick={()=>this.props.increaseQuantity(this.props.product)}
                             />
                            <img 
                            alt="decrease" 
